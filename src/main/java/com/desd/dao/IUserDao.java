@@ -2,20 +2,20 @@ package com.desd.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.desd.domain.User;
+import com.desd.domain.User2;
 
 
 @Repository("userDao")
 public interface IUserDao {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(User record);
+    int insert(User2 record);
 
-    int insertSelective(User record);
+    int insertSelective(User2 record);
 
-    User selectByPrimaryKey(Integer id);
+    User2 selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(User2 record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(User2 record);
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
-import com.desd.domain.User;
+import com.desd.domain.User2;
 import com.desd.service.IUserService;
 
 
@@ -23,7 +23,7 @@ public class UserController {
 	@RequestMapping("/showUser")
 	public String toIndex(HttpServletRequest request,Model model){
 		int userId = Integer.parseInt(request.getParameter("id"));
-		User user = this.userService.getUserById(userId);
+		User2 user = this.userService.getUserById(userId);
 		model.addAttribute("user", user);
 		return "showUser";
 	}
@@ -31,7 +31,7 @@ public class UserController {
 	@RequestMapping(value="/getUser", method = RequestMethod.GET)
 	@ResponseBody
 	public String getUserInfo(){
-		User user = this.userService.getUserById(1);
+		User2 user = this.userService.getUserById(1);
 		String result = JSON.toJSONString(user);
 		
 		return result;

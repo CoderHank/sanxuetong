@@ -1,8 +1,8 @@
 package com.desd.service;
 
-import com.desd.domain.User;
+import com.desd.domain.User2;
 
 
 public interface IUserService {
-	public User getUserById(int userId);
+	public User2 getUserById(int userId);
 }

@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
-import com.desd.domain.User;
+import com.desd.domain.User2;
 import com.desd.service.IUserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)		//表示继承了SpringJUnit4ClassRunner类
@@ -32,7 +32,7 @@ public class TestMyBatis {
 
 	@Test
 	public void test1() {
-		User user = userService.getUserById(1);
+		User2 user = userService.getUserById(1);
 		// System.out.println(user.getUserName());
 		// logger.info("值："+user.getUserName());
 		logger.info(JSON.toJSONString(user));

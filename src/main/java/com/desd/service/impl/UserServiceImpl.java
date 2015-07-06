@@ -5,7 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.desd.dao.IUserDao;
-import com.desd.domain.User;
+import com.desd.domain.User2;
 import com.desd.service.IUserService;
 
 @Service("userService")
@@ -14,7 +14,7 @@ public class UserServiceImpl implements IUserService {
 	private IUserDao userDao;
 	
 	@Override
-	public User getUserById(int userId) {
+	public User2 getUserById(int userId) {
 		
 		return this.userDao.selectByPrimaryKey(userId);
 	}
