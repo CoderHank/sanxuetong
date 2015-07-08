@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.desd.domain.User2;
+import com.desd.exception.BusinessException;
+import com.desd.param.BaseParam;
+import com.desd.param.ResponseParam;
 import com.desd.service.IUserService;
+import com.desd.util.Logs;
 
 
 @Controller
@@ -35,5 +39,21 @@ public class UserController {
 		String result = JSON.toJSONString(user);
 		
 		return result;
+	}
+	
+	@RequestMapping(value="/testGetUser", method = RequestMethod.GET)
+	@ResponseBody
+	public String testGetUserInfo(){
+		BaseParam<Integer> baseParam = new BaseParam<>();
+		ResponseParam<User2> resultParam = new ResponseParam<User2>();
+		try {
+			Logs.getLogger().error("===进入 testGetUserInfo(");
+			resultParam.setData(this.userService.testGetUser(baseParam));
+		} catch (BusinessException e) {
+			resultParam.setMsg(e.getMessage());
+			resultParam.setStatusCode(e.getErrorType().toString());
+		}
+		
+		return resultParam.toJson();
 	}
 }

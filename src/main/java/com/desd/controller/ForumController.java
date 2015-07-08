@@ -30,6 +30,11 @@ public class ForumController {
 		return null;
 	}
 	
+	/**
+	 * 根据主题ID获取其下面所有的帖子
+	 * @param subject_id
+	 * @return
+	 */
 	@RequestMapping(value="/posts", method=RequestMethod.GET)
 	@ResponseBody
 	public String getPostsBySubjectId(@RequestParam("subject_id") long subject_id){

@@ -151,6 +151,14 @@
             <version>16.0.1</version>
             <!--version>14.0.1</version-->
 		</dependency>
+		
+		<!-- aspect -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
+			<version>1.8.2</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
